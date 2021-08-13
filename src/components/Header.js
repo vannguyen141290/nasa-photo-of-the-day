@@ -1,6 +1,26 @@
 import React from "react";
 
-import '../index.css';
+import styled from 'styled-components';
+
+const StyledHeader = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2% 3% 1% 3%;
+    .logo {
+        display: flex;
+        width: 7%;
+        padding: 0 20px;
+        justify-content: space-between;
+        border: solid red 1px;
+        align-items: center;
+        margin: 0 30px;
+    }
+    .logo div {
+        font-size: 20px;
+    }
+`;
+
 
 export default function Header () {
     const logoStyle ={
@@ -10,10 +30,10 @@ export default function Header () {
     };
   
     return (
-      <div className='nav-container'>
+      <StyledHeader className='nav-container'>
           <div className='logo'>
               <img src='124-1240796_nasa-nasa-space-ship-nasalogo-aesthetic-cool-cute.png' alt='Nasa Logo' style={logoStyle}/>
-              <span>NASA</span>
+              <div>NASA</div>
           </div>
           <div className='navigation'>
               <nav>
@@ -23,6 +43,6 @@ export default function Header () {
                   <button>CONTACT</button>
               </nav>
           </div>
-      </div>
+      </StyledHeader>
   )
 }

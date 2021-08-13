@@ -1,11 +1,26 @@
-import "../App.css";
+
 import '../index.css';
 import React, { useState, useEffect } from "react";
 import Posts from "./Posts";
 import axios from 'axios';
 import { API_KEY } from "./api";
+import styled from 'styled-components';
 
+const StyledBottom = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    height: vh;
+    margin: auto;
+    .posts-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+    };
 
+`
 
   
 export default function BottomContent() {
@@ -27,13 +42,13 @@ export default function BottomContent() {
     }, []);
 
     return (
-        <>
+        <StyledBottom>
             <h2>Collections</h2>
             {err && <div>{err}</div>}
-            <div>
+            <div className="posts-container">
                 <Posts posts={posts}/>
             </div>
-        </>
+        </StyledBottom>
     );
 }
   
